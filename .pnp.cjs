@@ -55,8 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:18.0.0"],\
             ["styled-components", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.3.5"],\
-            ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"],\
-            ["yarn", "npm:1.22.18"]\
+            ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4424,8 +4423,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:18.0.0"],\
             ["styled-components", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.3.5"],\
-            ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"],\
-            ["yarn", "npm:1.22.18"]\
+            ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4633,15 +4631,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yaml-npm-1.10.2-0e780aebdf-ce4ada136e.zip/node_modules/yaml/",\
           "packageDependencies": [\
             ["yaml", "npm:1.10.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["yarn", [\
-        ["npm:1.22.18", {\
-          "packageLocation": "./.yarn/unplugged/yarn-npm-1.22.18-bff0c72e72/node_modules/yarn/",\
-          "packageDependencies": [\
-            ["yarn", "npm:1.22.18"]\
           ],\
           "linkType": "HARD"\
         }]\
