@@ -4,7 +4,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TreeItem from '@mui/lab/TreeItem';
 
-const Nav = ({ open }: any) => {
+type NavProps = {
+  open?: boolean;
+};
+
+const Nav = (props: NavProps) => {
+  const { open } = props;
+
   return (
     <TreeView
       aria-label="file system navigator"

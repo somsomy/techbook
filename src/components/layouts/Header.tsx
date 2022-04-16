@@ -1,37 +1,45 @@
-import { Box, IconButton, Toolbar, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Nav from './Nav';
 import { useState } from 'react';
+
+import { Box, IconButton, Theme, Toolbar, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import { styled, useTheme } from '@mui/material/styles';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
+import Nav from './Nav';
+
 const drawerWidth = 240;
 
-const openedMixin = (theme: any) => ({
+type ThemeProps = {
+  theme: Theme;
+};
+
+const isNotOpen = (prop: PropertyKey) => prop !== 'open';
+
+const openedMixin = ({ transitions }: Theme) => ({
   width: drawerWidth,
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen
+  transition: transitions.create('width', {
+    easing: transitions.easing.sharp,
+    duration: transitions.duration.enteringScreen
   }),
   overflowX: 'hidden'
 });
 
-const closedMixin = (theme: any) => ({
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen
+const closedMixin = ({ transitions, spacing, breakpoints }: Theme) => ({
+  transition: transitions.create('width', {
+    easing: transitions.easing.sharp,
+    duration: transitions.duration.leavingScreen
   }),
   overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`
+  width: `calc(${spacing(7)} + 1px)`,
+  [breakpoints.up('sm')]: {
+    width: `calc(${spacing(8)} + 1px)`
   }
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
+const DrawerHeader = styled('div')(({ theme }: ThemeProps) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
@@ -40,9 +48,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar
 }));
 
+type Props = {
+  position: string;
+  open: boolean;
+};
+
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open'
-})(({ theme, open }) => ({
+  shouldForwardProp: (prop) => isNotOpen(prop)
+})<Props>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -58,33 +71,25 @@ const AppBar = styled(MuiAppBar, {
   })
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => isNotOpen(prop) })(
   ({ theme, open }) => ({
-    width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    ...(open && {
-      ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme)
-    }),
-    ...(!open && {
-      ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme)
-    })
+    ...(open
+      ? { ...openedMixin(theme), '& .MuiDrawer-paper': openedMixin(theme) }
+      : { ...closedMixin(theme), '& .MuiDrawer-paper': closedMixin(theme), width: drawerWidth })
   })
 );
+
 const Header = () => {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
   return (
     <>
       <AppBar position="fixed" open={open}>
@@ -109,7 +114,7 @@ const Header = () => {
       <NavContainer sx={{ display: 'flex', position: 'relative' }}>
         <Drawer variant="permanent" open={open}>
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
+            <IconButton onClick={handleDrawerOpen}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
           </DrawerHeader>
