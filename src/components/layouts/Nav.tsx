@@ -1,11 +1,9 @@
-import { useRouter } from 'next/router';
-
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import { PATH_DASHBOARD } from '../../routes/paths';
+import Link from 'next/link';
 
 interface NavProps {
   open: boolean;
@@ -13,8 +11,6 @@ interface NavProps {
 
 const Nav = (props: NavProps) => {
   const { open } = props;
-
-  const router = useRouter();
 
   return (
     <TreeView
@@ -24,14 +20,11 @@ const Nav = (props: NavProps) => {
       sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: 'auto', opacity: open ? 1 : 0 }}
     >
       {menuList.map((menu) => (
-        <TreeItem key={`top-${menu.id}`} nodeId={`top-${menu.id}`} label={menu.topMenu}>
+        <TreeItem key={menu.topMenu} nodeId={menu.topMenu} label={menu.topMenu}>
           {menu.subMenu.map((subMenu) => (
-            <TreeItem
-              key={`sub-${subMenu.id}`}
-              nodeId={`sub-${subMenu.id}`}
-              label={subMenu.label}
-              onClick={() => router.push(PATH_DASHBOARD[subMenu.path])}
-            />
+            <Link key={subMenu.label} href={`/${menu.topMenu}/${subMenu.label}`}>
+              <TreeItem nodeId={subMenu.label} label={subMenu.label} />
+            </Link>
           ))}
         </TreeItem>
       ))}
@@ -42,24 +35,13 @@ const Nav = (props: NavProps) => {
 export default Nav;
 
 interface MenuList {
-  id: number;
   topMenu: string;
-  subMenu: {
-    id: number;
-    label: string;
-    path: string;
-  }[];
+  subMenu: { label: string }[];
 }
 
 const menuList: MenuList[] = [
-  {
-    id: 1,
-    topMenu: 'Applications',
-    subMenu: [{ id: 1, label: 'Calendar', path: 'calendar' }]
-  },
-  {
-    id: 2,
-    topMenu: 'Document',
-    subMenu: []
-  }
+  { topMenu: 'subject', subMenu: [{ label: 'sub' }, { label: 'react-hook-form' }] },
+  { topMenu: 'css', subMenu: [{ label: 'sub' }, { label: 'theme' }] },
+  { topMenu: 'react-library', subMenu: [{ label: 'sub' }, { label: 'react-hook-form' }] },
+  { topMenu: 'animation', subMenu: [{ label: 'sub' }, { label: 'theme' }] }
 ];
