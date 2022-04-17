@@ -1,8 +1,7 @@
-const Test = () => {
-  console.log('test');
+const TestText = () => {
   return (
     <div>teafdasflsajlfjsaljflksajflksajdflkjasdlkfjlaskdjflkdsajflksdjalfk;jsdalkfj;ldsafst</div>
   );
 };
 
-export default Test;
+export default TestText;

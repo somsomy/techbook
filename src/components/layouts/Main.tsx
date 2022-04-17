@@ -5,10 +5,10 @@ import styled from '@emotion/styled';
 import { Box, Theme } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-type MainBoxProps = {
+interface MainBoxProps {
   open: boolean;
   theme: Theme;
-};
+}
 
 const MainBox = styled(Box)(({ open, theme }: MainBoxProps) => ({
   display: 'flex',
