@@ -100,7 +100,13 @@ const Header = ({ open, handleDrawerOpen }: HeaderProps) => {
 
   return (
     <>
-      <AppBar position="fixed" open={open}>
+      <AppBar
+        position="fixed"
+        open={open}
+        sx={{
+          backgroundColor: 'rgb(0 0 0 / 81%)'
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -115,7 +121,7 @@ const Header = ({ open, handleDrawerOpen }: HeaderProps) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            TechBook
           </Typography>
           <Switch checked={checked} onChange={handleChange} color="secondary" />
         </Toolbar>
