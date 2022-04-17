@@ -1,9 +1,9 @@
+import { ReactNode, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
-import Nav from './Nav';
-import { useRouter } from 'next/router';
-import { ReactNode, useEffect } from 'react';
-import { createContext } from 'react';
 
 const ScrollToTop = () => {
   const router = useRouter();
@@ -13,20 +13,24 @@ const ScrollToTop = () => {
   return null;
 };
 
-// export let HeaderBgContext: any = createContext();
-type Props = {
+interface LayoutProps {
   children: ReactNode;
-};
+}
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div>
+    <>
       <ScrollToTop />
-      <Header />
-      <Nav />
-      <div>{children}</div>
-      <Footer />
-    </div>
+      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+      <Main open={open}>{children}</Main>
+      <Footer open={open} />
+    </>
   );
 };
 

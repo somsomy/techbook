@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { drawerWidth } from '../../config';
 
-import { Box, IconButton, Theme, Toolbar, Typography } from '@mui/material';
+import { IconButton, Theme, Toolbar, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
@@ -10,11 +10,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import Nav from './Nav';
 
-const drawerWidth = 240;
-
-type ThemeProps = {
+interface ThemeProps {
   theme: Theme;
-};
+}
 
 const isNotOpen = (prop: PropertyKey) => prop !== 'open';
 
@@ -82,13 +80,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => isNotOpen(prop) 
   })
 );
 
-const Header = () => {
-  const theme = useTheme();
-  const [open, setOpen] = useState<boolean>(false);
+type HeaderProps = {
+  open: boolean;
+  handleDrawerOpen: () => void;
+};
 
-  const handleDrawerOpen = () => {
-    setOpen(!open);
-  };
+const Header = ({ open, handleDrawerOpen }: HeaderProps) => {
+  const theme = useTheme();
 
   return (
     <>
@@ -111,21 +109,16 @@ const Header = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <NavContainer sx={{ display: 'flex', position: 'relative' }}>
-        <Drawer variant="permanent" open={open}>
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerOpen}>
-              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-            </IconButton>
-          </DrawerHeader>
-          <Nav open={open} />
-        </Drawer>
-      </NavContainer>
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader>
+          <IconButton onClick={handleDrawerOpen}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+        </DrawerHeader>
+        <Nav open={open} />
+      </Drawer>
     </>
   );
 };
 
-const NavContainer = styled(Box)({
-  position: 'relative'
-});
 export default Header;
