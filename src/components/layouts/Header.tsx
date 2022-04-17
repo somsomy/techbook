@@ -1,6 +1,6 @@
 import { drawerWidth } from '../../config';
 
-import { IconButton, Theme, Toolbar, Typography } from '@mui/material';
+import { IconButton, Switch, Theme, Toolbar, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
@@ -9,6 +9,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import Nav from './Nav';
+import { ChangeEvent, useContext, useState } from 'react';
+import { ThemeSettingContext } from '../../contexts/ThemeContext';
 
 interface ThemeProps {
   theme: Theme;
@@ -87,6 +89,14 @@ type HeaderProps = {
 
 const Header = ({ open, handleDrawerOpen }: HeaderProps) => {
   const theme = useTheme();
+  const { onChangeMode } = useContext(ThemeSettingContext);
+
+  const [checked, setChecked] = useState<boolean>(false);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onChangeMode();
+    setChecked(event.target.checked);
+  };
 
   return (
     <>
@@ -107,6 +117,7 @@ const Header = ({ open, handleDrawerOpen }: HeaderProps) => {
           <Typography variant="h6" noWrap component="div">
             Mini variant drawer
           </Typography>
+          <Switch checked={checked} onChange={handleChange} color="secondary" />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
