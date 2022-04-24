@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.24"],\
             ["@types/react", "npm:18.0.5"],\
             ["@types/react-dom", "npm:18.0.1"],\
+            ["@types/styled-components", "npm:5.1.25"],\
             ["@typescript-eslint/eslint-plugin", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.19.0"],\
             ["@typescript-eslint/parser", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.19.0"],\
             ["add", "npm:2.0.6"],\
@@ -1203,6 +1204,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/hoist-non-react-statics", [\
+        ["npm:3.3.1", {\
+          "packageLocation": "./.yarn/cache/@types-hoist-non-react-statics-npm-3.3.1-c0081332b2-2c0778570d.zip/node_modules/@types/hoist-non-react-statics/",\
+          "packageDependencies": [\
+            ["@types/hoist-non-react-statics", "npm:3.3.1"],\
+            ["@types/react", "npm:18.0.5"],\
+            ["hoist-non-react-statics", "npm:3.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/json-schema", [\
         ["npm:7.0.11", {\
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.11-79462ae5ca-527bddfe62.zip/node_modules/@types/json-schema/",\
@@ -1295,6 +1307,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-b6b4dcfeae.zip/node_modules/@types/scheduler/",\
           "packageDependencies": [\
             ["@types/scheduler", "npm:0.16.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/styled-components", [\
+        ["npm:5.1.25", {\
+          "packageLocation": "./.yarn/cache/@types-styled-components-npm-5.1.25-c6ef913a87-60ce64f132.zip/node_modules/@types/styled-components/",\
+          "packageDependencies": [\
+            ["@types/styled-components", "npm:5.1.25"],\
+            ["@types/hoist-non-react-statics", "npm:3.3.1"],\
+            ["@types/react", "npm:18.0.5"],\
+            ["csstype", "npm:3.0.11"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4433,6 +4457,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.24"],\
             ["@types/react", "npm:18.0.5"],\
             ["@types/react-dom", "npm:18.0.1"],\
+            ["@types/styled-components", "npm:5.1.25"],\
             ["@typescript-eslint/eslint-plugin", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.19.0"],\
             ["@typescript-eslint/parser", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.19.0"],\
             ["add", "npm:2.0.6"],\
