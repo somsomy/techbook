@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@emotion/core", "npm:11.0.0"],\
             ["@emotion/react", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:11.9.0"],\
             ["@emotion/styled", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:11.8.1"],\
             ["@mui/icons-material", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.6.1"],\
@@ -56,6 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:18.0.0"],\
             ["react-hook-form", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:7.30.0"],\
+            ["react-is", "npm:18.0.0"],\
             ["styled-components", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.3.5"],\
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
           ],\
@@ -416,6 +418,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/utils", "npm:1.1.0"],\
             ["@emotion/weak-memoize", "npm:0.2.5"],\
             ["stylis", "npm:4.0.13"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@emotion/core", [\
+        ["npm:11.0.0", {\
+          "packageLocation": "./.yarn/cache/@emotion-core-npm-11.0.0-03ccf93fb4-d9beeff0c1.zip/node_modules/@emotion/core/",\
+          "packageDependencies": [\
+            ["@emotion/core", "npm:11.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4003,6 +4014,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-is", "npm:17.0.2"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:18.0.0", {\
+          "packageLocation": "./.yarn/cache/react-is-npm-18.0.0-504cb8482b-d38f6afee4.zip/node_modules/react-is/",\
+          "packageDependencies": [\
+            ["react-is", "npm:18.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["react-transition-group", [\
@@ -4362,7 +4380,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hoist-non-react-statics", "npm:3.3.2"],\
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:18.0.0"],\
-            ["react-is", null],\
+            ["react-is", "npm:18.0.0"],\
             ["shallowequal", "npm:1.1.0"],\
             ["supports-color", "npm:5.5.0"]\
           ],\
@@ -4448,6 +4466,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["techbook", "workspace:."],\
+            ["@emotion/core", "npm:11.0.0"],\
             ["@emotion/react", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:11.9.0"],\
             ["@emotion/styled", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:11.8.1"],\
             ["@mui/icons-material", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.6.1"],\
@@ -4471,6 +4490,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:18.0.0"],\
             ["react-hook-form", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:7.30.0"],\
+            ["react-is", "npm:18.0.0"],\
             ["styled-components", "virtual:0e1ff8b09f91925328c4ce3bd12854198d3b4053f1c6c848d73dbaa3c39ad2d515ad723ce089a91689d79770223fe1b9c5d41a3f9ee8655b0c838d026219f394#npm:5.3.5"],\
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
           ],\

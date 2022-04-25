@@ -41,7 +41,7 @@ interface MenuList {
 
 const menuList: MenuList[] = [
   { topMenu: 'subject', subMenu: [{ label: 'sub' }, { label: 'react-hook-form' }] },
-  { topMenu: 'css', subMenu: [{ label: 'sub' }, { label: 'theme' }] },
+  { topMenu: 'css', subMenu: [{ label: 'water-drop' }, { label: 'theme' }] },
   { topMenu: 'react-library', subMenu: [{ label: 'sub' }, { label: 'react-hook-form' }] },
   { topMenu: 'animation', subMenu: [{ label: 'sub' }, { label: 'theme' }] }
 ];
